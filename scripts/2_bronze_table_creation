@@ -1,4 +1,4 @@
--- Createing CRM Customer Info Table inside Bronze Schema.
+--1 Createing CRM Customer Info Table inside Bronze Schema.
 IF OBJECT_ID('bronze.crm_cust_info' ,'U') IS NOT NULL 
 DROP TABLE bronze.crm_cust_info;
 CREATE TABLE bronze.crm_cust_info (
@@ -11,7 +11,7 @@ cst_gndr NVARCHAR(50),
 cst_create_date DATE
 );
 
--- Createing CRM Product Info Table inside Bronze Schema.
+--2 Createing CRM Product Info Table inside Bronze Schema.
 IF OBJECT_ID('bronze.crm_prd_info' ,'U') IS NOT NULL 
 DROP TABLE bronze.crm_prd_info;
 CREATE TABLE bronze.crm_prd_info (
@@ -24,22 +24,22 @@ prd_start_dt DATETIME,
 prd_end_dt DATETIME
 );
 
--- Createing CRM Sales Detail Table inside Bronze Schema.
+--3 Createing CRM Sales Detail Table inside Bronze Schema.
 IF OBJECT_ID('bronze.crm_sls_detail' ,'U') IS NOT NULL 
 DROP TABLE bronze.crm_sls_detail;
 CREATE TABLE bronze.crm_sls_detail (
 sls_ord_num NVARCHAR (50),
 sls_prd_key NVARCHAR (50),
 sls_cust_id INT,
-sls_order_dt DATETIME,
-sls_ship_dt DATETIME,
-sls_due_dt DATETIME,
+sls_order_dt INT,
+sls_ship_dt INT,
+sls_due_dt INT,
 sls_sales INT,
 sls_quantity INT,
 sls_price INT
 );
 
--- Createing ERP Customer AZ12 Table inside Bronze Schema.
+--4 Createing ERP Customer AZ12 Table inside Bronze Schema.
 IF OBJECT_ID('bronze.erp_cust_az12' ,'U') IS NOT NULL 
 DROP TABLE bronze.erp_cust_az12;
 CREATE TABLE bronze.erp_cust_az12 (
@@ -48,7 +48,7 @@ BDATE DATE,
 GEN NVARCHAR (50)
 );
 
--- Createing ERP Loc_A101 Table inside Bronze Schema.
+--5 Createing ERP Loc_A101 Table inside Bronze Schema.
 IF OBJECT_ID('bronze.erp_loc_a101' ,'U') IS NOT NULL 
 DROP TABLE bronze.erp_loc_a101;
 CREATE TABLE bronze.erp_loc_a101 (
@@ -56,10 +56,10 @@ CID NVARCHAR (50),
 CNTRY NVARCHAR (50)
 );
 
--- Createing ERP Cat_GLV2 Table inside Bronze Schema.
+--6 Createing ERP Cat_GLV2 Table inside Bronze Schema.
 IF OBJECT_ID('bronze.erp_cat_g1v2' ,'U') IS NOT NULL 
-DROP TABLE bronze.erp_loc_g1v2;
-CREATE TABLE bronze.erp_loc_g1v2 (
+DROP TABLE bronze.erp_cat_g1v2;
+CREATE TABLE bronze.erp_cat_g1v2 (
 ID NVARCHAR (50),
 CAT NVARCHAR (50),
 SUBCAT NVARCHAR (50),
