@@ -15,9 +15,10 @@ WARNING:
 		GO
 		
 		-- Drop and recreate the 'DataWarehouse' database
-		IF EXISTS (SELECT  FROM  sys.databases WHERE name = 'DataWarehouse')
-		BIGIN
-			ALTER DATABASE DataWarehouse SET SINGLE_USER WITH ROLLBACK IMEDIATE;
+		IF EXISTS (SELECT  1 FROM  sys.databases WHERE name = 'DataWarehouse')
+		BEGIN
+			ALTER DATABASE DataWarehouse SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+			DROP DATABASE DataWarehouse;
 		END;
 		GO
 		
@@ -25,8 +26,12 @@ WARNING:
 		CREATE DATABASE DataWarehouse;
 		GO
 		
+		USE DataWarehouse;
+		GO
+
 		-- Create Schemas
 		CREATE SCHEMA bronze;
+
 		GO 
 		-- Create Schemas
 		CREATE SCHEMA silver;
