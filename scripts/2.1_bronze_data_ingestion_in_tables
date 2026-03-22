@@ -8,8 +8,6 @@ WITH (
 		TABLOCK
 	);
 
-SELECT COUNT(*)
-FROM bronze.crm_cust_info 
 
 -- 2 Inserting data from CSV to Product Info Table inside Bronze Schema.
 TRUNCATE TABLE bronze.crm_prd_info; 
@@ -21,8 +19,6 @@ WITH (
 		TABLOCK
 	);
 
-SELECT COUNT(*)
-FROM bronze.crm_prd_info;
 
 --3 Inserting data from CSV to CRM Sales Detail Table inside Bronze Schema.
 TRUNCATE TABLE bronze.crm_sls_detail; 
@@ -34,8 +30,6 @@ WITH (
 		TABLOCK
 	);
 
-SELECT COUNT(*)
-FROM bronze.crm_sls_detail; 
 
 -- 4 Inserting data from CSV to Customer AZ12 Table inside Bronze Schema.
 TRUNCATE TABLE bronze.erp_cust_az12; 
@@ -47,8 +41,6 @@ WITH (
 		TABLOCK
 	);
 
-SELECT COUNT(*)
-FROM bronze.erp_cust_az12; 
 
 -- 5 Inserting data from CSV to ERP Loc_A101 Table inside Bronze Schema.
 TRUNCATE TABLE bronze.erp_loc_a101; 
@@ -60,8 +52,6 @@ WITH (
 		TABLOCK
 	);
 
-SELECT COUNT(*)
-FROM bronze.erp_loc_a101;
 
 -- 6 Inserting data from CSV to ERP Cat_GLV2 Table Table inside Bronze Schema.
 TRUNCATE TABLE bronze.erp_cat_g1v2; 
@@ -73,8 +63,6 @@ WITH (
 		TABLOCK
 	);
 
-SELECT COUNT(*)
-FROM bronze.erp_cat_g1v2; 
 
 
 
